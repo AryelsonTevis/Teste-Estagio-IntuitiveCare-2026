@@ -1,12 +1,20 @@
 import pandas as pd
 from sqlalchemy import create_engine
+import os
+from dotenv import load_dotenv
+
+load_dotenv() # Carrega as variáveis do arquivo .env
+
+
+
+# ... e assim por diante
 
 def inserir_no_banco(despesas, planos_saude, trimestres):
-    usuario = "avnadmin"
-    senha = "AVNS_ijq0-CSazBOLOdhlqbI"
-    host = "estagiobd-testebd.f.aivencloud.com"
-    porta = "27428"
-    banco = "defaultdb"
+    usuario = os.getenv("DB_USER")
+    senha = os.getenv("DB_PASS")
+    host = os.getenv("DB_HOST")
+    porta = os.getenv("DB_PORT")
+    banco = os.getenv("DB_NAME")
 
     # construindo a string de conexão
     url_conexao = f"mysql+pymysql://{usuario}:{senha}@{host}:{porta}/{banco}"
