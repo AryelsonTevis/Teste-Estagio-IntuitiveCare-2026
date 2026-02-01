@@ -1,40 +1,55 @@
-# Projeto 1 – Processamento de Arquivos
+# 📊 Projeto – Processamento de Dados da ANS
 
 ## 📌 Descrição
-Este projeto tem como objetivo realizar o processamento automático de arquivos de diferentes formatos (CSV, TXT, XLSX), extraindo, normalizando e organizando dados de forma padronizada para análise posterior.
+Este projeto realiza o **download, extração, processamento e consolidação de dados públicos da ANS (Agência Nacional de Saúde Suplementar)** referentes às demonstrações contábeis trimestrais e à lista de operadoras de planos de saúde ativas.
 
-O sistema identifica automaticamente a estrutura dos arquivos e trata variações de colunas e formatos, garantindo consistência nos dados finais.
-
----
-
-## 🚀 Funcionalidades
-- 📂 Leitura automática de arquivos ZIP
-- 🗜️ Extração de arquivos compactados
-- 📄 Suporte a múltiplos formatos (CSV, TXT, XLSX)
-- 🔍 Identificação dinâmica de colunas
-- 🔄 Normalização de dados
-- 📊 Preparação dos dados para análise ou exportação
-
----
-
-## 🛠️ Tecnologias Utilizadas
-- Python 3.x  
-- Bibliotecas padrão do Python  
-- Pandas (se aplicável)  
-- OpenPyXL (para arquivos Excel)
+Ao final do processo, os dados são filtrados, normalizados, convertidos em CSV e compactados em um arquivo `.zip`.
 
 ---
 
 ## 📁 Estrutura do Projeto
+
+
+
+```
 projeto1/
 │
-├── data/ # Arquivos de entrada
-├── output/ # Arquivos processados
-├── src/ # Código-fonte
-│ └── main.py
-├── requirements.txt # Dependências
+├── src/
+│ ├── main.py
+│ ├── endpoints.py
+│ ├── extrair.py
+│ ├── detectar.py
+│ ├── criar_csv.py
+│ └── compactar_para_zip.py
+│
+├── data/
+│ ├── zip/
+│ └── csv/
+│
 └── README.md
+```
+---
 
+## ⚙️ Funcionalidades
+
+- Download dos arquivos ZIP dos últimos trimestres disponíveis
+- Download da lista de operadoras de planos de saúde ativas
+- Extração automática dos arquivos ZIP
+- Detecção e filtragem dos dados relevantes
+- Formatação e normalização dos valores
+- Geração de arquivo CSV final
+- Compactação do resultado em um arquivo ZIP
+
+---
+
+## 📦 Dependências
+
+Este projeto utiliza as seguintes bibliotecas Python:
+
+- `requests`
+- `pandas`
+---
+## ▶️ Como Executar o Projeto
 1️⃣ Acesse a pasta do projeto
 cd projeto1
 

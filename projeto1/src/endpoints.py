@@ -12,7 +12,7 @@ def get_last_quarters(file_names):
             
                 with open("data/zip/" + file_name, "wb") as arquivo:
                     arquivo.write(response.content)
-                print("Arquivo salvo com sucesso na mesma pasta do seu script!")
+                print("Arquivo salvo com sucesso na pasta csv do seu script!")
             else:
                 print(f"Erro ao baixar: {response.status_code}")
                 
@@ -29,7 +29,7 @@ def get_active_ans():
         
             with open("data/csv/" + "planos_de_saude_ativos.csv", "wb") as arquivo:
                 arquivo.write(response.content)
-            print("Arquivo salvo com sucesso na mesma pasta do seu script!")
+            print("Arquivo salvo com sucesso na pasta csv do seu script!")
         else:
             print(f"Erro ao baixar: {response.status_code}")
             
