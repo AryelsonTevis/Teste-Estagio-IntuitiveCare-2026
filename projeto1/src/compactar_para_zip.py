@@ -1,7 +1,7 @@
 import zipfile
 import os
 
-def compactar_resultado():
+def compact_result():
     caminho_zip = os.path.join("data/zip", "consolidado_despesas.zip")
     try:
         

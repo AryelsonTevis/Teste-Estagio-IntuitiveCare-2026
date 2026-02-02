@@ -6,10 +6,7 @@ from dotenv import load_dotenv
 load_dotenv() # Carrega as variáveis do arquivo .env
 
 
-
-# ... e assim por diante
-
-def inserir_no_banco(despesas, planos_saude, trimestres):
+def insert_into_database(despesas, planos_saude, trimestres):
     usuario = os.getenv("DB_USER")
     senha = os.getenv("DB_PASS")
     host = os.getenv("DB_HOST")
@@ -29,7 +26,7 @@ def inserir_no_banco(despesas, planos_saude, trimestres):
             df_despesas['MediaDespesas'] = df_despesas['MediaDespesas'].astype(str)
             df_despesas['MediaDespesas'] = (
                 df_despesas['MediaDespesas']
-                .str.replace(r'[^\d,.-]', '', regex=True) # Remove tudo que não for número, vírgula ou ponto
+                .str.replace(r'[^\d,.-]', '', regex=True) # Remove tudo que não for número
                 .str.replace('.', '', regex=False)       # Remove ponto de milhar
                 .str.replace(',', '.', regex=False)       # Troca vírgula decimal por ponto
                 .str.strip()

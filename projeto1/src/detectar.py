@@ -1,6 +1,6 @@
 import pandas as pd
 
-def linhas_filtradas(t1, t2, t3):
+def filtered_lines(t1, t2, t3):
     trimestres = [t1, t2, t3]
     lista_linhas = []
     for t in trimestres:
@@ -25,7 +25,7 @@ def linhas_filtradas(t1, t2, t3):
     else:
         return "Nenhum dado encontrado."
     
-def criar_arquivo_final(df_final, planos_de_saude_ativos):
+def filtered_file(df_final, planos_de_saude_ativos):
     
     try:
         
@@ -54,7 +54,7 @@ def criar_arquivo_final(df_final, planos_de_saude_ativos):
         print(f"Erro no cruzamento: {e}")
         return None
 
-def formatar_valores(df):
+def format_values(df):
     try:
         # Converter a coluna DATA para datetime
         df['DATA'] = pd.to_datetime(df['DATA'])

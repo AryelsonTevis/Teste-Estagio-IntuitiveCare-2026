@@ -1,6 +1,6 @@
 import zipfile
 
-def extrair_zip(t1, t2, t3):
+def extract_zip(t1, t2, t3):
     trimestres = [t1, t2, t3]
     pasta_destino = 'data/csv/'
     for t in trimestres:

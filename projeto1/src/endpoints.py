@@ -2,7 +2,7 @@ import requests
 
 base_url = "https://dadosabertos.ans.gov.br/FTP/PDA"
 
-
+#baixar os arquivos dos três últimos trimestres
 def get_last_quarters(file_names):
     for file_name in file_names:
         try:
@@ -21,7 +21,7 @@ def get_last_quarters(file_names):
             return None
 
 
-
+#baixar a lista de ANS ativos
 def get_active_ans():
     try:
         response = requests.get(base_url + "/operadoras_de_plano_de_saude_ativas/Relatorio_cadop.csv")

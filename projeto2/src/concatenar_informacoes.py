@@ -1,6 +1,6 @@
 import pandas as pd
 
-def criar_arquivo_final(df_final, planos_de_saude_ativos):
+def create_final_file(df_final, planos_de_saude_ativos):
     
     try:
         
@@ -39,7 +39,7 @@ def criar_arquivo_final(df_final, planos_de_saude_ativos):
         print(f"Erro no cruzamento: {e}")
         return None
 
-def formatar_valores(df):
+def format_values(df):
     try:
 
         # Selecionar colunas finais
